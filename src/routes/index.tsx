@@ -76,25 +76,38 @@ const PRICING = [
   { name: "Occasion Couture", price: "₹4,999", features: ["End-to-end occasion wear", "Bespoke fittings", "Home delivery"], cta: "Plan my look" },
 ];
 
+const PARTICLES = Array.from({ length: 35 }, (_, i) => {
+  const seed = (i + 1) * 12.9898;
+  const rand = (offset: number) => {
+    const value = Math.sin(seed + offset) * 43758.5453;
+    return value - Math.floor(value);
+  };
+
+  return {
+    left: rand(1) * 100,
+    size: 2 + rand(2) * 5,
+    dur: 8 + rand(3) * 14,
+    delay: rand(4) * 12,
+    shimmer: 2 + rand(5) * 3,
+    opacity: 0.3 + rand(6) * 0.4,
+  };
+});
+
 function Particles() {
-  const items = Array.from({ length: 35 });
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {items.map((_, i) => {
-        const left = Math.random() * 100;
-        const size = 2 + Math.random() * 5;
-        const dur = 8 + Math.random() * 14;
-        const delay = Math.random() * 12;
+      {PARTICLES.map((particle, i) => {
         return (
           <span
             key={i}
             className="particle"
             style={{
-              left: `${left}%`,
-              width: size, height: size,
-              animationDuration: `${dur}s, ${2 + Math.random() * 3}s`,
-              animationDelay: `${delay}s, 0s`,
-              opacity: 0.3 + Math.random() * 0.4,
+              left: `${particle.left}%`,
+              width: particle.size,
+              height: particle.size,
+              animationDuration: `${particle.dur}s, ${particle.shimmer}s`,
+              animationDelay: `${particle.delay}s, 0s`,
+              opacity: particle.opacity,
             }}
           />
         );
