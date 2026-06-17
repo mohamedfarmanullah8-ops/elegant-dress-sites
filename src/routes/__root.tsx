@@ -78,20 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Maison Vélour" },
-      { name: "description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship. 💎
-Experience luxury fashion tailored to your unique personality" },
+      { name: "description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Maison Vélour" },
-      { property: "og:description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship. 💎
-Experience luxury fashion tailored to your unique personality" },
+      { property: "og:description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Maison Vélour" },
-      { name: "twitter:description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship. 💎
-Experience luxury fashion tailored to your unique personality" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9527b42d-39ef-456e-ae59-764513186b75/id-preview-72af2822--63d395e3-afb5-4ca6-83de-40104c535b4e.lovable.app-1781709972639.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9527b42d-39ef-456e-ae59-764513186b75/id-preview-72af2822--63d395e3-afb5-4ca6-83de-40104c535b4e.lovable.app-1781709972639.png" },
+      { name: "twitter:description", content: "Elevate your wardrobe with exclusive designs, personalized styling, and flawless craftsmanship." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e76801a-7406-413c-8f3f-f286174dceb2/id-preview-9a70bb4e--63d395e3-afb5-4ca6-83de-40104c535b4e.lovable.app-1781711103229.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e76801a-7406-413c-8f3f-f286174dceb2/id-preview-9a70bb4e--63d395e3-afb5-4ca6-83de-40104c535b4e.lovable.app-1781711103229.png" },
     ],
     links: [
       {
