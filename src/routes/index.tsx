@@ -194,27 +194,6 @@ function Home() {
     return () => clearInterval(id);
   }, []);
 
-  // Custom cursor
-  useEffect(() => {
-    const move = (e: MouseEvent) => {
-      if (cursorDot.current) {
-        cursorDot.current.style.left = e.clientX + "px";
-        cursorDot.current.style.top = e.clientY + "px";
-      }
-      if (cursorRing.current) {
-        cursorRing.current.style.left = e.clientX + "px";
-        cursorRing.current.style.top = e.clientY + "px";
-      }
-    };
-    const enter = () => cursorRing.current?.style.setProperty("transform", "translate(-50%,-50%) scale(1.6)");
-    const leave = () => cursorRing.current?.style.setProperty("transform", "translate(-50%,-50%) scale(1)");
-    window.addEventListener("mousemove", move);
-    document.querySelectorAll("a,button").forEach((el) => {
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("mouseleave", leave);
-    });
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
