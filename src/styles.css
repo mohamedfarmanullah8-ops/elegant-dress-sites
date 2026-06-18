@@ -144,28 +144,6 @@
 .reveal { opacity: 0; }
 .reveal.in { animation: fade-up 0.8s ease-out forwards; }
 
-/* Custom cursor */
-.cursor-dot, .cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-}
-.cursor-dot {
-  width: 8px; height: 8px;
-  background: var(--ocean-soft);
-  border-radius: 50%;
-  transition: transform 0.15s ease;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid var(--ocean-soft);
-  border-radius: 50%;
-  transition: transform 0.25s ease, width 0.25s, height 0.25s;
-}
-@media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
 
 /* Marquee */
 @keyframes marquee {

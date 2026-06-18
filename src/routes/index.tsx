@@ -153,8 +153,6 @@ function Home() {
   const [statsIn, setStatsIn] = useState(false);
   const [tIdx, setTIdx] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
-  const cursorDot = useRef<HTMLDivElement>(null);
-  const cursorRing = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -196,27 +194,6 @@ function Home() {
     return () => clearInterval(id);
   }, []);
 
-  // Custom cursor
-  useEffect(() => {
-    const move = (e: MouseEvent) => {
-      if (cursorDot.current) {
-        cursorDot.current.style.left = e.clientX + "px";
-        cursorDot.current.style.top = e.clientY + "px";
-      }
-      if (cursorRing.current) {
-        cursorRing.current.style.left = e.clientX + "px";
-        cursorRing.current.style.top = e.clientY + "px";
-      }
-    };
-    const enter = () => cursorRing.current?.style.setProperty("transform", "translate(-50%,-50%) scale(1.6)");
-    const leave = () => cursorRing.current?.style.setProperty("transform", "translate(-50%,-50%) scale(1)");
-    window.addEventListener("mousemove", move);
-    document.querySelectorAll("a,button").forEach((el) => {
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("mouseleave", leave);
-    });
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -225,9 +202,6 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div ref={cursorDot} className="cursor-dot" />
-      <div ref={cursorRing} className="cursor-ring" />
-
       {/* NAV */}
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/85 backdrop-blur-xl shadow-sm" : "bg-transparent"}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
