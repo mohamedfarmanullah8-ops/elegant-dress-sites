@@ -202,9 +202,6 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div ref={cursorDot} className="cursor-dot" />
-      <div ref={cursorRing} className="cursor-ring" />
-
       {/* NAV */}
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/85 backdrop-blur-xl shadow-sm" : "bg-transparent"}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
