@@ -153,8 +153,6 @@ function Home() {
   const [statsIn, setStatsIn] = useState(false);
   const [tIdx, setTIdx] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
-  const cursorDot = useRef<HTMLDivElement>(null);
-  const cursorRing = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
